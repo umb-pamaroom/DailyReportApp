@@ -1,0 +1,17 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+  <a class="btn" href="{% url 'app:new_memo' %}">新規日報作成</a>
+
+  {% for memo in memos %}
+    <a href="{% url 'app:detail' memo.id %}" class="memo-title">
+      <div class="fb">
+        <p class="memo_title">{{ memo.created_datetime }}</p>
+        <p class="updated_datetime">{{ memo.discovery }}</p>
+      </div>
+    </a>
+  {% endfor %}
+
+{% endblock %}

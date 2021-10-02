@@ -1,0 +1,1 @@
+web: gunicorn memoproject.wsgi --log-file -

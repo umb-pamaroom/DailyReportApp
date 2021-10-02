@@ -1,0 +1,66 @@
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+    <div>
+        <a href="{% url 'app:index' %}">ホームに戻る</a>
+    </div>
+
+    <h2>{{ memo.created_datetime }}</h2>
+
+    <div class="text-block">
+        <h3>新しい発見</h3>
+        <div>
+            {{ memo.discovery | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>疲れたこと</h3>
+        <div>
+            {{ memo.tired | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>嫌だったこと</h3>
+        <div>
+            {{ memo.dislike | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>嬉しかったこと</h3>
+        <div>
+            {{ memo.happy | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>頑張ったこと</h3>
+        <div>
+            {{ memo.best | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>明日したいこと</h3>
+        <div>
+            {{ memo.tomorrow | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>その他</h3>
+        <div>
+            {{ memo.other | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <h3>1日のまとめ</h3>
+        <div>
+            {{ memo.summarize | linebreaks | urlize }}
+        </div>
+    </div>
+
+    <button><a class="btn" href="{% url 'app:edit_memo' memo.pk %}">編集</a></button>
+
+    <form method="post" action="{% url 'app:delete_memo' memo.pk %}">{% csrf_token %}
+        <button class="btn" type="submit" onclick='return confirm("本当に削除しますか？");'>削除</button>
+    </form>
+
+{% endblock %}
