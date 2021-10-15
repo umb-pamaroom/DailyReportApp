@@ -6,61 +6,65 @@
         <a href="{% url 'app:index' %}">ホームに戻る</a>
     </div>
 
-    <h2>{{ memo.created_datetime }}</h2>
+    <h2 class="mb1">{{ memo.created_datetime }}</h2>
 
+    <div class="text-blocks">
     <div class="text-block">
-        <h3>新しい発見</h3>
+        <p>新しい発見</p>
         <div>
             {{ memo.discovery | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>疲れたこと</h3>
+        <p>一番印象に残ったこと</p>
         <div>
             {{ memo.tired | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>嫌だったこと</h3>
-        <div>
-            {{ memo.dislike | linebreaks | urlize }}
-        </div>
-    </div>
-    <div class="text-block">
-        <h3>嬉しかったこと</h3>
+        <p>嬉しかったこと</p>
         <div>
             {{ memo.happy | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>頑張ったこと</h3>
+        <p>頑張ったこと</p>
         <div>
             {{ memo.best | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>明日したいこと</h3>
+        <p>明日したいこと</p>
         <div>
             {{ memo.tomorrow | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>その他</h3>
+        <p>改善点</p>
+        <div>
+            {{ memo.dislike | linebreaks | urlize }}
+        </div>
+    </div>
+    <div class="text-block">
+        <p>その他</p>
         <div>
             {{ memo.other | linebreaks | urlize }}
         </div>
     </div>
     <div class="text-block">
-        <h3>1日のまとめ</h3>
+        <p>1日のまとめ</p>
         <div>
             {{ memo.summarize | linebreaks | urlize }}
         </div>
     </div>
+    </div>
 
-    <button><a class="btn" href="{% url 'app:edit_memo' memo.pk %}">編集</a></button>
+    <div class="tc">
+    <a class="btn btn-flat mb2" href="{% url 'app:edit_memo' memo.pk %}">編集</a>
 
     <form method="post" action="{% url 'app:delete_memo' memo.pk %}">{% csrf_token %}
-        <button class="btn" type="submit" onclick='return confirm("本当に削除しますか？");'>削除</button>
+        <button class="btn btn-flat bgblack" type="submit" onclick='return confirm("本当に削除しますか？");'>削除</button>
     </form>
+    </div>
 
 {% endblock %}

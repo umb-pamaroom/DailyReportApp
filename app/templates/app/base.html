@@ -7,86 +7,19 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>日報アプリ</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'app/css/style.css' %}">
-        <style>
-            body {
-                margin: 0;
-                padding: 0;
-            }
-
-            button {
-                background: none;
-                border: 0;
-                cursor: pointer;
-            }
-
-            form {
-                display: inline-block;
-            }
-
-            .fb {
-                display: flex;
-                flex-wrap: wrap;
-                padding: 1em;
-                align-items: center;
-            }
-
-            .fb .memo_title {
-                font-weight: bold;
-                margin-right: 1em;
-            }
-
-            h1 {
-                margin-top: 0;
-                padding: 10px;
-                font-size: 35px;
-                background-color: #668AD9;
-                color: #fff;
-                text-align: center;
-                box-shadow: 0 1px 8px #777;
-                text-shadow: 1px 1px 1px #777;
-            }
-
-            .btn {
-                display: inline-block;
-                padding: 0.5em 1em;
-                text-decoration: none;
-                background: #668ad8;
-                color: #FFF;
-                border-bottom: solid 4px #627295;
-                border-radius: 3px;
-                margin-bottom: 10px;
-            }
-
-            .container {
-                width: 70%;
-                margin: auto;
-            }
-
-            .memo-title {
-                display: block;
-                border-bottom: 1px solid #ddd;
-                padding: 20px;
-                font-size: 20px;
-                color: #444;
-                text-decoration: none;
-            }
-
-            .memo-title:hover {
-                background-color: #eee;
-            }
-
-            .updated_datetime {
-                font-size: 12px;
-            }
-
-        </style>
+        <link rel="stylesheet" type="text/css" href="{% static 'app/scss/common.css' %}">
     </head>
     <body>
-        <h1>日報アプリ</h1>
+
+        <header class="commonHeader">
+            <h1>＼ パパママ思い出 ／</h1>
+        </header>
 
         <div class="container">
             {% block content %}{% endblock %}
         </div>
+        <footer class="tc">
+            copyright パパママ思い出 2021
+        </footer>
     </body>
 </html>

@@ -5,11 +5,11 @@ from .models import Memo
 class MemoForm(ModelForm):
     class Meta:
         model = Memo
-        fields = ['discovery', 'tired', 'dislike','happy', 'best', 'tomorrow', 'other', 'summarize']
+        fields = ['discovery', 'tired', 'happy', 'best', 'tomorrow', 'dislike','other', 'summarize']
         labels = {
             'discovery': '新しい発見',
-            'tired': '疲れたこと',
-            'dislike': '嫌だったこと',
+            'tired': '一番印象に残ったこと',
+            'dislike': '改善点',
             'happy': '嬉しかったこと',
             'best': '頑張ったこと',
             'tomorrow': '明日したいこと',

@@ -2,13 +2,15 @@
 
 {% block content %}
 
-    <div>
+    <div class="bread">
         <a href="{% url 'app:index' %}">ホームに戻る</a>
     </div>
 
-    <form action="{% url 'app:new_memo' %}" method="POST">{% csrf_token %}
+    <form class="newMemo p-memo" action="{% url 'app:new_memo' %}" method="POST">{% csrf_token %}
         {{ form.as_p }}
-        <button type="submit" class="btn">保存</button>
+        <div class="tc">
+        <button type="submit" class="btn btn-flat">保存</button>
+        </div>
     </form>
 
 {% endblock %}

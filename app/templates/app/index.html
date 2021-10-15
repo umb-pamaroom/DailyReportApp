@@ -3,15 +3,21 @@
 
 {% block content %}
 
-  <a class="btn" href="{% url 'app:new_memo' %}">新規日報作成</a>
+<div class="tc mb2">
+  <a class="btn btn-flat" href="{% url 'app:new_memo' %}">新規日報作成</a>
+</div>
 
+  <div class="fb indexFb">
   {% for memo in memos %}
-    <a href="{% url 'app:detail' memo.id %}" class="memo-title">
+  <div class="card">
+    <a href="{% url 'app:detail' memo.id %}">
       <div class="fb">
-        <p class="memo_title">{{ memo.created_datetime }}</p>
-        <p class="updated_datetime">{{ memo.discovery }}</p>
+        <p class="title">{{ memo.created_datetime }}</p>
+        <p class="text">{{ memo.discovery }}</p>
       </div>
     </a>
+    </div>
   {% endfor %}
+  </div>
 
 {% endblock %}

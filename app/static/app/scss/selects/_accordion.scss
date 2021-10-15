@@ -1,0 +1,109 @@
+.questions {
+  padding-bottom: 0;
+
+  h2 {
+    padding: .3em .8em;
+    border-bottom: 3px solid $main-color;
+    display: inline-block;
+  }
+
+  .inner {
+    margin-bottom: 6em;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  ul.accordion-ul {
+    width: 100%;
+
+    >li {
+      margin-bottom: 0;
+      border-top: 1px solid $text-grey;
+
+      // アコーディオン
+      .accordion {
+        cursor: pointer;
+        padding: 2em;
+        width: 100%;
+        transition: 0.4s;
+        position: relative;
+        transition-duration: 0.2s;
+        text-align: left;
+        font-weight: bold;
+
+        &:after {
+          content: "\f078";
+          margin-left: .3em;
+          font-weight: 900;
+          font-family: 'Font Awesome 5 Free',
+            'Font Awesome 5 Brands';
+          color: $black;
+          font-weight: bold;
+          position: absolute;
+          top: 50%;
+          right: 2em;
+          transform: translateY(-50%);
+          -webkit-transform: translateY(-50%);
+          -ms-transform: translateY(-50%);
+          font-size: 2em;
+          display: inline-block;
+          transition-duration: 0.2s;
+        }
+
+        &.open {
+          &:after {
+            content: "\f077";
+          }
+        }
+      }
+
+      &:last-child {
+        border-bottom: 1px solid $text-grey;
+      }
+
+      .panel {
+        padding: 1em 2em 2em;
+        display: none;
+        text-align: left;
+      }
+    }
+  }
+}
+
+/*  --------------------------------------------------------------- 
+  600以下（480pxで問題ないかどうか）
+  --------------------------------------------------------------- */
+@media screen and (max-width: 768px) {
+  .questions {
+
+    ul.accordion-ul {
+      width: 100%;
+
+      >li {
+        margin-bottom: 0;
+        border-top: 1px solid $text-grey;
+
+        // アコーディオン
+        .accordion {
+          padding: 1.5em 1em;
+          padding-right: 4em;
+          &:after {
+            right: .8em;
+            font-size: 1.8em;
+          }
+        }
+
+        .panel {
+          padding:.8em 1em 1.5em;
+        }
+      }
+    }
+  }
+}
+
+/*  --------------------------------------------------------------- 
+  479以下（320pxで問題ないかどうか）
+  --------------------------------------------------------------- */
+@media screen and (max-width: 479px) {}

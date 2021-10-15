@@ -6,8 +6,9 @@
         <a href="{% url 'app:detail' memo.id %}">戻る</a>
     </div>
 
-    <form action="{% url 'app:edit_memo' memo.id %}" method="POST">{% csrf_token %}
-        <table>
+    <form action="{% url 'app:edit_memo' memo.id %}" method="POST">
+        {% csrf_token %}
+        <table class="form-table">
             <tr>
                 <th>新しい発見</th>
                 <td>{{ form.discovery }}</td>
@@ -41,7 +42,9 @@
                 <td>{{ form.summarize }}</td>
             </tr>
         </table>
-        <button class="btn" type="submit">保存</button>
+        <div class="tc">
+        <button class="btn btn-flat" type="submit">保存</button>
+        </div>
     </form>
 
 {% endblock %}

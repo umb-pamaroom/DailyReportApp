@@ -1,0 +1,248 @@
+// ヘッダー
+.commonHeader {
+  h1 {
+    background: $blue;
+    color: #fff;
+    font-size: 1.6em;
+    padding: 1em;
+    text-align: center;
+  }
+
+  margin-bottom: 2em;
+}
+
+footer {
+  padding: 6em 2em 3em;
+  font-size: 14px;
+}
+
+body {
+  background: rgb(231, 231, 231);
+}
+
+
+// 共通
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: calc(100% - 40px);
+}
+
+.card {
+  padding: .8em;
+  width: 25%;
+
+  a {
+    background: rgb(255, 255, 255);
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+    display: block;
+    padding: 1em;
+    transition-duration: .3s;
+
+    &:hover {
+      box-shadow: none;
+    }
+
+    >.fb {
+      flex-wrap: wrap;
+
+      >* {
+        width: 100%;
+      }
+    }
+  }
+
+  .title {
+    font-weight: bold;
+  }
+
+}
+
+
+textarea {
+  background: #fff;
+  border: 1px solid #ccc;
+  height: 200px;
+  padding: .8em 1em;
+}
+
+.p-memo {
+  max-width: 800px;
+  margin: 0 auto;
+
+  p {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 1.5em;
+    padding: .8em;
+
+    >* {
+      width: 100%;
+    }
+
+    label {
+      font-weight: bold;
+      margin-bottom: .2em;
+    }
+  }
+}
+
+.form-table {
+  max-width: 800px;
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  tbody{
+    display: block;
+    width: 100%;
+  }
+
+  tr {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 1.5em;
+    padding: .8em;
+    th{
+      font-weight: bold;
+      margin-bottom: .2em;
+    }
+
+    th,td {
+      width: 100%;
+      display: block;
+      textarea{
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+// トップ
+.indexFb {
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+// ボタン
+.btn,
+a.btn,
+button.btn {
+  font-size: 1.1em;
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+  display: inline-block;
+  padding: .8em 2em;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  transition: all 0.3s;
+  text-align: center;
+  vertical-align: middle;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 3px;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+
+  &.bgblack {
+    background: #000;
+  }
+}
+
+.btn-flat {
+  overflow: hidden;
+
+  padding: 1.5rem 6rem;
+
+  color: #fff;
+  background: $blue;
+}
+
+.btn-flat span {
+  position: relative;
+}
+
+.btn-flat:before {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100px;
+  height: 100px;
+
+  content: '';
+  transition: all .5s ease-in-out;
+  transform: translateX(-80%) translateY(-25px);
+
+  border-radius: 50%;
+  background: rgb(81, 130, 238);
+}
+
+.btn-flat:hover:before {
+  width: 400px;
+  height: 400px;
+
+  transform: translateX(-1%) translateY(-175px);
+}
+
+.text-blocks {
+  margin-bottom: 3em;
+  border-top: 1px solid #000;
+
+  .text-block {
+    padding: 1.5em 0;
+    border-bottom: 1px solid #000;
+
+    >p {
+      font-weight: bold;
+    }
+  }
+}
+
+/*  --------------------------------------------------------------- 
+  960以下（600pxで問題ないかどうか）
+  --------------------------------------------------------------- */
+@media screen and (max-width: 960px) {
+  .card {
+    width: 33.33333333%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    width: 50%;
+  }
+}
+
+/*  --------------------------------------------------------------- 
+  600以下（480pxで問題ないかどうか）
+  --------------------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  .card {
+    width: 100%;
+    padding: .6em 0;
+  }
+
+  .p-memo {
+    p {
+      padding: .6em 0;
+    }
+  }
+  .form-table{
+    tr{
+      padding: .6em 0;
+    }
+  }
+}
+
+/*  --------------------------------------------------------------- 
+  479以下（320pxで問題ないかどうか）
+  --------------------------------------------------------------- */
+@media screen and (max-width: 479px) {}
