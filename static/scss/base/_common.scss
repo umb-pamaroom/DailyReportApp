@@ -60,11 +60,38 @@ body {
 }
 
 
-textarea {
+textarea,
+input {
   background: #fff;
   border: 1px solid #ccc;
   height: 200px;
   padding: .8em 1em;
+}
+
+input {
+  height: auto !important;
+width: 100%;
+  &+span {
+    display: block;
+  }
+}
+
+input[type="file"] {
+  padding: 0;
+  background: none;
+  border: none;
+  width: 100%;
+}
+
+::-webkit-file-upload-button {
+  display: block;
+  width: 100%;
+  background: $blue;
+  color: #fff;
+  border:none;
+  padding: .6em;
+  font-weight: bold;
+  margin-bottom: .4em;
 }
 
 .p-memo {
@@ -93,7 +120,8 @@ textarea {
   margin: 0 auto;
   display: block;
   width: 100%;
-  tbody{
+
+  tbody {
     display: block;
     width: 100%;
   }
@@ -104,15 +132,18 @@ textarea {
     width: 100%;
     margin-bottom: 1.5em;
     padding: .8em;
-    th{
+
+    th {
       font-weight: bold;
       margin-bottom: .2em;
     }
 
-    th,td {
+    th,
+    td {
       width: 100%;
       display: block;
-      textarea{
+
+      textarea {
         width: 100%;
       }
     }
@@ -235,8 +266,9 @@ button.btn {
       padding: .6em 0;
     }
   }
-  .form-table{
-    tr{
+
+  .form-table {
+    tr {
       padding: .6em 0;
     }
   }

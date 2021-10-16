@@ -6,6 +6,7 @@ from django.shortcuts import render, redirect
 from django.views.decorators.http import require_POST
 
 
+
 def index(request):
   memos = Memo.objects.all().order_by('-updated_datetime')
   return render(request, 'app/index.html', {'memos': memos})
@@ -27,7 +28,7 @@ def new_memo(request):
 
 def new_memo(request):
     if request.method == "POST":
-        form = MemoForm(request.POST)
+        form = MemoForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             return redirect('app:index')
@@ -46,7 +47,7 @@ def delete_memo(request, memo_id):
 def edit_memo(request, memo_id):
     memo = get_object_or_404(Memo, id=memo_id)
     if request.method == "POST":
-        form = MemoForm(request.POST, instance=memo)
+        form = MemoForm(request.POST, request.FILES, instance=memo)
         if form.is_valid():
             form.save()
             return redirect('app:index')

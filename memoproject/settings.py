@@ -42,6 +42,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
+    'django_static_md5url',
     'app',
 ]
 
@@ -60,7 +63,7 @@ ROOT_URLCONF = 'memoproject.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +75,13 @@ TEMPLATES = [
         },
     },
 ]
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hbompbl8d',
+    'API_KEY': '487399432684887',
+    'API_SECRET': '5ay-uPUmXGKSIC9pPIBsVRQtgWw'
+}
+
 
 WSGI_APPLICATION = 'memoproject.wsgi.application'
 
@@ -136,3 +146,8 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
