@@ -10,6 +10,10 @@
         {% csrf_token %}
         <table class="form-table">
             <tr>
+                <th>日付</th>
+                <td>{{ form.dateData }}</td>
+            </tr>
+            <tr>
                 <th>新しい発見</th>
                 <td>{{ form.discovery }}</td>
             </tr>

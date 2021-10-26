@@ -37,6 +37,11 @@ def new_memo(request):
     return render(request, 'app/new_memo.html', {'form': form})
 
 
+def meal_list(request):
+  memos = Memo.objects.all().order_by('-updated_datetime')
+  return render(request, 'app/meal_list.html', {'memos': memos})
+
+
 @require_POST
 def delete_memo(request, memo_id):
     memo = get_object_or_404(Memo, id=memo_id)

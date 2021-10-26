@@ -76,6 +76,21 @@ width: 100%;
   }
 }
 
+.fb.three{
+  display: flex;
+  justify-content: flex-start;
+  >*{
+    width: 33.3333%;
+    max-height:150px;
+    overflow: hidden;
+    >*{
+      width: 100%;
+      -o-object-fit: cover;
+         object-fit: cover;
+    }
+  } 
+}
+
 input[type="file"] {
   padding: 0;
   background: none;

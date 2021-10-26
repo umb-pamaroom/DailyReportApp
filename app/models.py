@@ -1,8 +1,12 @@
 from django.db import models
 from cloudinary.models import CloudinaryField
+from django.utils import timezone
 
 # Memoモデルを作成する
 class Memo(models.Model):
+
+    # 日付
+    dateData = models.DateField(default=timezone.now, blank=True)
 
     # 新しい発見
     discovery = models.TextField(blank=True)

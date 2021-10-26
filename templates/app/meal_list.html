@@ -5,7 +5,6 @@
 
 <div class="tc mb2">
   <a class="btn btn-flat mb2" href="{% url 'app:new_memo' %}">新規日報作成</a>
- <a class="btn btn-flat mb2" href="{% url 'app:meal_list' %}">食事一覧</a>
 </div>
 
   <div class="fb indexFb">
@@ -14,7 +13,20 @@
     <a href="{% url 'app:detail' memo.id %}">
       <div class="fb">
         <p class="title">{{ memo.dateData }}</p>
-        <p class="text">{{ memo.discovery }}</p>
+
+        <div class="fb three">
+        {% if memo.breakfast %}
+        <p class="text"><img src="{{ memo.breakfast.url }}"></p>
+        {% endif %}
+
+        {% if memo.lunch %}
+        <p class="text"><img src="{{ memo.lunch.url }}"></p>
+        {% endif %}
+
+        {% if memo.dinner %}
+        <p class="text"><img src="{{ memo.dinner.url }}"></p>
+        {% endif %}
+        </div>
       </div>
     </a>
     </div>

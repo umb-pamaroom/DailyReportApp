@@ -5,8 +5,9 @@ from .models import Memo
 class MemoForm(ModelForm):
     class Meta:
         model = Memo
-        fields = ['discovery', 'tired', 'happy', 'best', 'tomorrow', 'dislike','other', 'summarize', 'breakfast', 'breakfastName', 'breakfastEvaluation', 'lunch','lunchName', 'lunchEvaluation', 'dinner', 'dinnerName' , 'dinnerEvaluation' , 'snack', 'snackName', 'snackEvaluation', 'mealComment']
+        fields = ['dateData', 'discovery', 'tired', 'happy', 'best', 'tomorrow', 'dislike','other', 'summarize', 'breakfast', 'breakfastName', 'breakfastEvaluation', 'lunch','lunchName', 'lunchEvaluation', 'dinner', 'dinnerName' , 'dinnerEvaluation' , 'snack', 'snackName', 'snackEvaluation', 'mealComment']
         labels = {
+            'dateData': '日付',
             'discovery': '新しい発見',
             'tired': '一番印象に残ったこと',
             'dislike': '改善点',
