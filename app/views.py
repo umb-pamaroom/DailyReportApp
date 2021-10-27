@@ -15,8 +15,17 @@ def index(request):
 
 
 def detail(request, memo_id):
+  # プライマリキーをmemo_idにする
   memo = get_object_or_404(Memo, id=memo_id)
   return render(request, 'app/detail.html', {'memo': memo})
+
+
+# def date(request, memo_dateData):
+#   month = self.kwargs.get('month')
+#   year = self.kwargs.get('year')
+#   day = self.kwargs.get('day')
+#   memo = get_object_or_404(Memo, dateData=dateData)
+#   return render(request, 'app/detail.html', {'memo': memo})
 
 
 def new_memo(request):
