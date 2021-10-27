@@ -38,7 +38,7 @@
             <div class="sidebarInner">
 
                 <nav class="nav">
-                    <ul class="list">
+                    <ul class="list accordion-ul">
                         <li>
                             <a href="/"><span>日報一覧</span></a>
                         </li>
@@ -46,24 +46,18 @@
                             <a href="{% url 'app:new_memo' %}"><span>新規日報作成</span></a>
                         </li>
                         <li class="treeview">
-                            <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">設定</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                            <a class="accordion" href="#"><span>食事管理</span></a>
                             
-                            <ul class="treeview-menu">
+                            <ul class="panel">
                                 <li><a href="{% url 'app:meal_list' %}"><span>食事一覧</span></a></li>
                                 <li><a href="{% url 'app:meal_list' %}"><span>朝食一覧</span></a></li>
                                 <li><a href="{% url 'app:meal_list' %}"><span>昼食一覧</span></a></li>
                                 <li><a href="{% url 'app:meal_list' %}"><span>夕食一覧</span></a></li>
                             </ul>
                         </li>
-                        <li>
-                            
-                        </li>
-                        <li>
-                            
-                        </li>
                         <li class="treeview">
-                            <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">設定</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-                            <ul class="treeview-menu">
+                            <a class="accordion accordion1" href="#"><span>設定</span></a>
+                            <ul class="panel">
                                 <li><a href=""><span>一般設定</span></a></li>
                                 <li><a href=""><span>マイページ</span></a></li>
                             </ul>

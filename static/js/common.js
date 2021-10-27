@@ -64,6 +64,14 @@ document.querySelector( '.nav-button' ).addEventListener( 'click', function () {
     document.querySelector( '.sidebar' ).classList.toggle( 'is-open' );
 } );
 
+document.querySelector( '.accordion' ).addEventListener( 'click', function () {
+    this.classList.toggle( "is-active" );
+} );
+
+document.querySelector( '.accordion1' ).addEventListener( 'click', function () {
+    this.classList.toggle( "is-active" );
+} );
+
 document.querySelector( '.sidebar-close' ).addEventListener( 'click', function () {
     document.querySelector( '.sidebar' ).classList.remove( 'is-open' );
 } );
