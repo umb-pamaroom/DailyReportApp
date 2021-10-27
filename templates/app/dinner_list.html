@@ -9,19 +9,21 @@
 </div>
 
 <div class="fb indexFb modalContainer">
-  {% for memo in memos %}
-    <div class="card p0">
+  <div class="card p0">
+    <div class="fb three flexWrap">
+      {% for memo in memos %}
       <div class="card-unit" href="{% url 'app:detail' memo.id %}">
-          {% if memo.dinner %}
-          <div class="btn-wrap">
-            <a class="btn modal-open" data-modal-open="modal-3-{{ memo.id }}"><img src="{{ memo.dinner.url }}"></a>
-          </div>
-          {% endif %}
-        <div class="modal" data-modal="modal-3-{{ memo.id }}">
+        {% if memo.dinner %}
+        <div class="btn-wrap">
+          <a class="btn modal-open" data-modal-open="modal-1-{{ memo.id }}"><img src="{{ memo.dinner.url }}"></a>
+          <p></p>
+        </div>
+        {% endif %}
+        <div class="modal" data-modal="modal-1-{{ memo.id }}">
           <div class="modal-cover"></div>
           <div class="modal-inner">
             <div class="modal-content">
-              <p class="date">{{ memo.dateData }}　夕食</p>
+              <p class="date">{{ memo.dateData }}　朝食</p>
               <div class="modal-content-ttl">{{ memo.dinnerName }}</div>
               {% if memo.dinner %}
               <p><img src="{{ memo.dinner.url }}"></p>
@@ -33,8 +35,9 @@
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-  {% endfor %}
+  </div>
 </div>
 
 {% endblock %}
