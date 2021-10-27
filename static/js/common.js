@@ -55,3 +55,15 @@
          return false;
      }, false );
  }
+
+
+
+//  メニューボタン
+document.querySelector( '.nav-button' ).addEventListener( 'click', function () {
+    document.querySelector( '.nav-button' ).classList.toggle( 'active' );
+    document.querySelector( '.sidebar' ).classList.toggle( 'is-open' );
+} );
+
+document.querySelector( '.sidebar-close' ).addEventListener( 'click', function () {
+    document.querySelector( '.sidebar' ).classList.remove( 'is-open' );
+} );

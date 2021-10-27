@@ -23,30 +23,43 @@
                 <!-- //ロゴ -->
 
                 <!-- メニューボタン -->
-                <a class="nav-button modal-open" data-modal-open="menu">
+                <button class="nav-button">
                     <span></span>
                     <span></span>
                     <span></span>
-                </a>
+                </button>
 
             </div>
         </header>
         <!-- //ヘッダー -->
 
-        <aside class="sidebar nav-wrap modal" data-modal="menu">
+        <aside class="sidebar nav-wrap">
 
             <div class="sidebarInner">
 
                 <nav class="nav">
                     <ul class="list">
                         <li>
-                            <a class="app-menu__item active" href="/"><span class="app-menu__label">日報一覧</span></a>
+                            <a href="/"><span>日報一覧</span></a>
                         </li>
                         <li>
                             <a href="{% url 'app:new_memo' %}"><span>新規日報作成</span></a>
                         </li>
+                        <li class="treeview">
+                            <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">設定</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                            
+                            <ul class="treeview-menu">
+                                <li><a href="{% url 'app:meal_list' %}"><span>食事一覧</span></a></li>
+                                <li><a href="{% url 'app:meal_list' %}"><span>朝食一覧</span></a></li>
+                                <li><a href="{% url 'app:meal_list' %}"><span>昼食一覧</span></a></li>
+                                <li><a href="{% url 'app:meal_list' %}"><span>夕食一覧</span></a></li>
+                            </ul>
+                        </li>
                         <li>
-                            <a href="{% url 'app:meal_list' %}"><span>食事一覧</span></a>
+                            
+                        </li>
+                        <li>
+                            
                         </li>
                         <li class="treeview">
                             <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">設定</span><i class="treeview-indicator fa fa-angle-right"></i></a>
@@ -56,7 +69,7 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#" class="btn btn-close btn-flat">閉じる</a>
+                            <a href="#" class="btn sidebar-close btn-flat" style="margin-top:3em">閉じる</a>
                         </li>
                     </ul>
 
