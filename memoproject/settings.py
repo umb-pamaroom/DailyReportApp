@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'django_static_md5url',
-    'app',
+    'apps.app',
+    # 'apps.register',
 ]
 
 MIDDLEWARE = [

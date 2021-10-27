@@ -3,10 +3,11 @@
 
 {% block content %}
 
-<div class="tc mb2">
-  <a class="btn btn-flat mb2" href="{% url 'app:new_memo' %}">新規日報作成</a>
- <a class="btn btn-flat mb2" href="{% url 'app:meal_list' %}">食事一覧</a>
-</div>
+  <div class="heading">
+    <div>
+      <h1>日報一覧</h1>
+    </div>
+  </div>
 
   <div class="fb indexFb">
   {% for memo in memos %}

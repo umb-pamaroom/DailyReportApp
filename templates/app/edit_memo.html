@@ -2,9 +2,11 @@
 
 {% block content %}
 
-    <div>
-        <a href="{% url 'app:detail' memo.id %}">戻る</a>
-    </div>
+      <div class="heading">
+          <div>
+              <h1>日報編集</h1>
+          </div>
+      </div>
 
     <form action="{% url 'app:edit_memo' memo.id %}" method="POST" enctype="multipart/form-data">
         {% csrf_token %}

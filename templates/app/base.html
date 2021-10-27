@@ -8,13 +8,61 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>日報アプリ</title>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
         <link rel="stylesheet" type="text/css" href="{% static 'scss/common.css' %}">
     </head>
     <body>
 
-        <header class="commonHeader">
-            <h1><a href="/">＼ パパママ思い出 ／</a></h1>            
+        <!-- ヘッダー -->
+        <header class="header">
+            <div class="fb mainMenu">
+                <!-- ロゴ -->
+                <div class="logo">
+                    <a href="/">パパママ思い出</a>
+                </div>
+                <!-- //ロゴ -->
+
+                <!-- メニューボタン -->
+                <a class="nav-button modal-open" data-modal-open="menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+
+            </div>
         </header>
+        <!-- //ヘッダー -->
+
+        <aside class="sidebar nav-wrap modal" data-modal="menu">
+
+            <div class="sidebarInner">
+
+                <nav class="nav">
+                    <ul class="list">
+                        <li>
+                            <a class="app-menu__item active" href="/"><span class="app-menu__label">日報一覧</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'app:new_memo' %}"><span>新規日報作成</span></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'app:meal_list' %}"><span>食事一覧</span></a>
+                        </li>
+                        <li class="treeview">
+                            <a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">設定</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+                            <ul class="treeview-menu">
+                                <li><a href=""><span>一般設定</span></a></li>
+                                <li><a href=""><span>マイページ</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </nav>
+               <div class="btn-wrap">
+                   <a href="#" class="btn btn-close btn-flat">閉じる</a>
+               </div>
+            </div>
+        </aside>
 
         <div class="container">
             {% block content %}{% endblock %}
@@ -22,6 +70,7 @@
         <footer class="tc">
             copyright パパママ思い出 2021
         </footer>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.4/jquery.min.js'></script>
         <script src="{% static 'js/common.js' %}"></script>
     </body>
 </html>
