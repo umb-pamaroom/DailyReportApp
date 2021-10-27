@@ -8,7 +8,9 @@ from django.views.decorators.http import require_POST
 
 
 def index(request):
-  memos = Memo.objects.all().order_by('-updated_datetime')
+
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
   return render(request, 'app/index.html', {'memos': memos})
 
 
@@ -38,7 +40,8 @@ def new_memo(request):
 
 
 def meal_list(request):
-  memos = Memo.objects.all().order_by('-updated_datetime')
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
   return render(request, 'app/meal_list.html', {'memos': memos})
 
 
