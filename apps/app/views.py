@@ -54,6 +54,24 @@ def meal_list(request):
   return render(request, 'app/meal_list.html', {'memos': memos})
 
 
+def breakfast_list(request):
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
+  return render(request, 'app/breakfast_list.html', {'memos': memos})
+
+
+def lunch_list(request):
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
+  return render(request, 'app/lunch_list.html', {'memos': memos})
+
+
+def dinner_list(request):
+  # 投稿の並び順を制御する
+  memos = Memo.objects.all().order_by('-dateData')
+  return render(request, 'app/dinner_list.html', {'memos': memos})
+
+
 @require_POST
 def delete_memo(request, memo_id):
     memo = get_object_or_404(Memo, id=memo_id)
