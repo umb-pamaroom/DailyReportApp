@@ -1,0 +1,81 @@
+
+{% extends 'app/base.html' %}
+
+{% block content %}
+
+<div class="tc mb2">
+  <a class="btn btn-flat mb2" href="{% url 'app:new_memo' %}">新規日報作成</a>
+</div>
+
+
+<div class="">
+
+<div class="btn-wrap">
+  <a href="#" class="btn modal-open" data-modal-open="modal-1">modal open !</a>
+</div>
+<div class="btn-wrap">
+  <a href="#" class="btn modal-open" data-modal-open="modal-2">モーダルが上がるよ !</a>
+</div>
+
+<!-- modal -->
+<div class="modal" data-modal="modal-1">
+  <div class="modal-cover"></div>
+  <div class="modal-inner">
+    <div class="modal-content">
+      <div class="modal-content-ttl">modal</div>
+      <p>This is a modal that does not use jQuery.</p>
+      <div class="btn-wrap">
+        <a href="#" class="btn btn-close">close </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="modal" data-modal="modal-2">
+  <div class="modal-cover"></div>
+  <div class="modal-inner">
+    <div class="modal-content">
+      <div class="modal-content-ttl">モーダル</div>
+      <p>jQueryを使わないモーダルだよ</p>
+      <div class="btn-wrap">
+        <a href="#" class="btn btn-close">閉じる </a>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- modal -->
+</div>
+
+
+  <div class="fb indexFb">
+  {% for memo in memos %}
+  <div class="card modalContainer">
+    <a href="{% url 'app:detail' memo.id %}">
+      <div class="fb">
+        <p class="title">{{ memo.dateData }}</p>
+
+        <div class="fb three">
+        {% if memo.breakfast %}
+        <div class="modalBox">
+          <img src="{{ memo.breakfast.url }}">
+        </div>
+        {% endif %}
+
+        {% if memo.lunch %}
+        <div class="modalBox">
+          <img src="{{ memo.lunch.url }}">
+        </div>
+        {% endif %}
+
+        {% if memo.dinner %}
+        <div class="modalBox">
+          <img src="{{ memo.dinner.url }}">
+        </div>
+        {% endif %}
+        </div>
+      </div>
+    </a>
+    </div>
+  {% endfor %}
+  </div>
+
+{% endblock %}
